@@ -10,14 +10,28 @@ OUTPUT: return substring from [i,j]
 INPUT2: I will Code for Mission RnD , 2,10
 OUTPUT2:will Code
 
-NOTES: Check Null Strings ,Include stddef for NULL if needed.Create a New string and return it ,dont modfiy
+NOTES: Check Null String
+s ,Include stddef for NULL if needed.Create a New string and return it ,dont modfiy
 original String
 */
-
+#include<malloc.h>
 #include <stddef.h>
 #include <stdlib.h>
 
 char * get_sub_string(char *str, int i, int j){
-
+	char *newstring;
+	newstring= (char*)malloc(sizeof(char)*(j+1- i));
+	int index = 0;
+	if (str==NULL||i>j)
     return NULL;
+	else
+	{
+		while (i <= j)
+		{
+			newstring[index] = str[i];
+			i++;
+			index++;
+		}
+		return newstring;
+	}
 }
