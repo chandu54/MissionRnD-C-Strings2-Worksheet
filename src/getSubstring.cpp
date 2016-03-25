@@ -18,9 +18,10 @@ original String
 #include <stddef.h>
 #include <stdlib.h>
 
-char * get_sub_string(char *str, int i, int j){
+char * get_sub_string(char *str, int i, int j)
+{
 	char *newstring;
-	newstring= (char*)malloc(sizeof(char)*(j+1- i));
+	newstring= (char*)malloc(sizeof(char)*(j-i));
 	int index = 0;
 	if (str==NULL||i>j)
     return NULL;
